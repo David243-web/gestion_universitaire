@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription Universitaire</title>
+    <style>
+        /* --- CSS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Même dégradé que la page de connexion */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .signup-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px; /* Un peu plus large pour le formulaire d'inscription */
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        p.subtitle {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+            font-size: 14px;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: #764ba2;
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 12px;
+            background: #764ba2;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .signup-btn:hover {
+            background: #5a378c;
+        }
+
+        .login-link {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .login-link a {
+            color: #764ba2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Organisation sur deux colonnes pour les écrans larges */
+        @media (min-width: 480px) {
+            .row {
+                display: flex;
+                gap: 15px;
+            }
+            .row .input-group {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <h2>Créer un compte étudiant</h2>
+        <p class="subtitle">Rejoignez notre communauté académique</p>
+        
+        <form action="#">
+            <div class="row">
+                <div class="input-group">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" id="firstname" placeholder="Jean" required>
+                </div>
+                <div class="input-group">
+                    <label for="lastname">Nom</label>
+                    <input type="text" id="lastname" placeholder="Dupont" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Universitaire</label>
+                <input type="email" id="email" placeholder="etudiant@univ.edu" required>
+            </div>
+
+            <div class="input-group">
+                <label for="faculty">Faculté / Filière</label>
+                <select id="faculty" required>
+                    <option value="" disabled selected>Choisissez votre filière</option>
+                    <option value="it">Informatique</option>
+                    <option value="eco">Économie & Gestion</option>
+                    <option value="droit">Droit</option>
+                    <option value="med">Médecine</option>
+                    <option value="eng">Génie Civil</option>
+                </select>
+            </div>
+            
+            <div class="row">
+                <div class="input-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirmation</label>
+                    <input type="password" id="confirm-password" placeholder="••••••••" required>
+                </div>
+            </div>
+
+            <button type="submit" class="signup-btn">S'inscrire maintenant</button>
+
+            <div class="login-link">
+                Déjà inscrit ? <a href="authen.html">Se connecter</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil | Portail Universitaire</title>
+    <style>
+        /* --- CSS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        /* Barre de navigation */
+        nav {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Section Héro */
+        .hero {
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Grille de cartes */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1100px;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 40px;
+            color: #764ba2;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .btn-card {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #764ba2;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-card:hover {
+            background: #5a378c;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 30px;
+            color: white;
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            nav { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GESTION UNIV</div>
+        <div class="nav-links">
+            <a href="accueil.html">Accueil</a>
+            <a href="listing.html">Étudiants</a>
+            <a href="authen.html">Déconnexion</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Portail de Gestion Universitaire</h1>
+        <p>Gérez facilement les inscriptions, suivez les dossiers des étudiants et accédez aux services académiques en un clic.</p>
+    </section>
+
+    <div class="container">
+        <div class="card">
+            <h3>Inscription</h3>
+            <p>Enregistrez un nouvel étudiant dans notre base de données universitaire pour l'année académique 2026.</p>
+            <a href="inscription.html" class="btn-card">Nouvelle Inscription</a>
+        </div>
+
+        <div class="card">
+            <h3>Base de Données</h3>
+            <p>Visualisez la liste complète des étudiants, modifiez leurs informations ou effectuez des recherches.</p>
+            <a href="listing.html" class="btn-card">Voir le Listing</a>
+        </div>
+
+        <div class="card">
+            <h3>Sécurité</h3>
+            <p>Accédez aux paramètres de sécurité ou déconnectez-vous de la session administrative actuelle.</p>
+            <a href="authen.html" class="btn-card">Se Connecter</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Système de Gestion Académique - République Démocratique du Congo
+    </footer>
+
+</body>
+</html>

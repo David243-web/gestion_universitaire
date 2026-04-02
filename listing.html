@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Étudiants</title>
+    <style>
+        /* --- CSS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .list-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .header-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            flex-grow: 1;
+            max-width: 500px;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar:focus {
+            border-color: #764ba2;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .btn-search { background: #764ba2; color: white; }
+        .btn-search:hover { background: #5a378c; }
+
+        .btn-add { background: #27ae60; color: white; }
+        .btn-add:hover { background: #219150; }
+
+        /* Tableau */
+        .table-wrapper { overflow-x: auto; margin-top: 20px; }
+
+        table { width: 100%; border-collapse: collapse; }
+
+        th {
+            background-color: #f8f9fa;
+            color: #764ba2;
+            text-align: left;
+            padding: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        td { padding: 15px; border-bottom: 1px solid #eee; color: #444; }
+
+        tr:hover { background-color: #fcfaff; }
+
+        /* Actions spécifiques */
+        .action-links { display: flex; gap: 10px; }
+
+        .edit-link { color: #2980b9; text-decoration: none; font-weight: bold; }
+        .delete-link { color: #e74c3c; text-decoration: none; font-weight: bold; }
+        .edit-link:hover, .delete-link:hover { text-decoration: underline; }
+
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: white;
+        }
+        .bg-it { background-color: #4a90e2; }
+        .bg-eng { background-color: #e67e22; }
+
+    </style>
+</head>
+<body>
+
+    <div class="list-container">
+        <div class="header-actions">
+            <h2>Listing des Étudiants</h2>
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-bar" placeholder="Nom de l'étudiant...">
+                <button class="btn btn-search" onclick="filterTable()">Rechercher</button>
+            </div>
+            <a href="#" class="btn btn-add">+ Ajouter</a>
+        </div>
+
+        <div class="table-wrapper">
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom Complet</th>
+                        <th>Email</th>
+                        <th>Faculté</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#001</td>
+                        <td class="student-name">David Lubanza</td>
+                        <td>Davidlubanza64@gmail.com</td>
+                        <td><span class="badge bg-it">Informatique</span></td>
+                        <td class="action-links">
+                            <a href="#" class="edit-link">Modifier</a>
+                            <a href="#" class="delete-link" onclick="return confirm('Supprimer cet étudiant ?')">Supprimer</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#002</td>
+                        <td class="student-name">Sarah Kalala</td>
+                        <td>s.kalala@univ.cd</td>
+                        <td><span class="badge bg-eng">Génie Civil</span></td>
+                        <td class="action-links">
+                            <a href="#" class="edit-link">Modifier</a>
+                            <a href="#" class="delete-link" onclick="return confirm('Supprimer cet étudiant ?')">Supprimer</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
